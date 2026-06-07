@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.neutron.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "WorldRendererMixin",
+    "ServerWorldMixin",
+    "LightingProviderMixin",
+    "BlockStateMixin",
+    "EntityNavigationMixin"
+  ],
+  "client": [
+    "ChunkBuilderMixin",
+    "ChunkRenderDispatcherMixin",
+    "BuiltChunkMixin",
+    "EntityRenderDispatcherMixin",
+    "ChunkSkyLightProviderMixin",
+    "ChunkBlockLightProviderMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
