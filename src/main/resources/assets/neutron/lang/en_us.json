@@ -1,0 +1,8 @@
+{
+  "modmenu.descriptionTranslation.neutron": "Advanced rendering and FPS optimization engine.",
+  "neutron.config.title": "Neutron Settings",
+  "neutron.config.dynamic_resolution": "Dynamic Resolution",
+  "neutron.config.multithreading": "Multi-threaded Chunking",
+  "neutron.config.entity_culling": "Entity Culling",
+  "neutron.config.smart_ticking": "Smart Entity Ticking"
+}
