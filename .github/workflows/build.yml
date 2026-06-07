@@ -22,13 +22,17 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
 
-    # 3. Setup and Build with Gradle automatically (No manual chmod required)
-    - name: Setup and Build with Gradle
+    # 3. Force Install Gradle 8.7 globally (Bypasses wrapper check)
+    - name: Install Gradle
       uses: gradle/actions/setup-gradle@v3
       with:
-        arguments: build
+        gradle-version: '8.7'
 
-    # 4. Upload the compiled .jar file from any directory level
+    # 4. Run the build command using the installed Gradle
+    - name: Build Mod
+      run: gradle build
+
+    # 5. Upload the compiled .jar file
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v4
       with:
