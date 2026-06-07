@@ -11,26 +11,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # 1. Checkout the repository code
     - name: Checkout Repository
       uses: actions/checkout@v4
 
+    # 2. Set up Java Environment
     - name: Set up JDK
       uses: actions/setup-java@v4
       with:
         java-version: '21'
         distribution: 'temurin'
 
-    - name: Setup Gradle
+    # 3. Setup and Build with Gradle automatically (No manual chmod required)
+    - name: Setup and Build with Gradle
       uses: gradle/actions/setup-gradle@v3
+      with:
+        arguments: build
 
-    - name: Make gradlew executable
-      run: chmod +x gradlew
-
-    - name: Build with Gradle
-      run: ./gradlew build
-
+    # 4. Upload the compiled .jar file from any directory level
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v4
       with:
         name: Neutron-Jar-File
-        path: build/libs/*.jar
+        path: '**/build/libs/*.jar'
